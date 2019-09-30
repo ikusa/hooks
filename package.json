@@ -1,0 +1,83 @@
+{
+	"name": "hooks",
+	"main": "node_modules/expo/AppEntry.js",
+	"scripts": {
+		"start": "expo start",
+		"android": "expo start --android",
+		"ios": "expo start --ios",
+		"web": "expo start --web",
+		"eject": "expo eject",
+		"format": "prettier --write \"src/**/*.{ts,tsx}\"",
+		"format:check": "prettier --check \"src/**/*.{ts,tsx}\"",
+		"lint": "eslint --max-warnings 0 \"src/**/*.{ts,tsx}\"",
+		"typecheck": "tsc --noEmit -p .",
+		"jest": "jest --coverage --passWithNoTests",
+		"test": "yarn lint && yarn typecheck && yarn format:check && yarn jest"
+	},
+	"dependencies": {
+		"expo": "^34.0.1",
+		"react": "16.8.3",
+		"react-dom": "^16.8.6",
+		"react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
+		"react-native-web": "^0.11.4"
+	},
+	"devDependencies": {
+		"@types/jest": "^24.0.17",
+		"@types/react": "^16.8.23",
+		"@types/react-native": "^0.57.65",
+		"@types/react-test-renderer": "^16.9.0",
+		"@typescript-eslint/eslint-plugin": "^2.0.0",
+		"@typescript-eslint/parser": "^2.0.0",
+		"babel-preset-expo": "^6.0.0",
+		"eslint": "^6.1.0",
+		"eslint-config-prettier": "^6.0.0",
+		"eslint-plugin-prettier": "^3.1.0",
+		"eslint-plugin-react": "^7.14.3",
+		"jest": "^24.8.0",
+		"jest-expo": "^34.0.0",
+		"prettier": "^1.18.2",
+		"react-native-testing-library": "^1.11.1",
+		"react-test-renderer": "^16.9.0",
+		"ts-jest": "^24.0.2",
+		"typescript": "^3.4.5"
+	},
+	"private": true,
+	"jest": {
+		"preset": "jest-expo",
+		"transform": {
+			"^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
+			"^.+\\.tsx?$": "ts-jest"
+		},
+		"testMatch": [
+			"**/__tests__/**/*.ts?(x)",
+			"**/?(*.)+(spec|test).ts?(x)"
+		],
+		"testPathIgnorePatterns": [
+			"<rootDir>/node_modules/"
+		],
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js",
+			"jsx",
+			"json",
+			"ios.ts",
+			"ios.tsx",
+			"android.ts",
+			"android.tsx"
+		],
+		"globals": {
+			"ts-jest": {
+				"tsConfig": {
+					"jsx": "react"
+				}
+			}
+		}
+	},
+	"prettier": {
+		"bracketSpacing": true,
+		"singleQuote": true,
+		"trailingComma": "all",
+		"arrowParens": "always"
+	}
+}
